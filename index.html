@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Arena - Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="screen-login" class="screen">
+        <h1>Space Arena</h1>
+        <h2>Cadastro de Jogadores</h2>
+        <div class="input-group">
+            <input type="text" id="p1-name" placeholder="Nome do Jogador 1 (Azul)" required>
+            <input type="text" id="p2-name" placeholder="Nome do Jogador 2 (Vermelho)" required>
+        </div>
+        <button id="btn-start">Iniciar Jogo</button>
+    </div>
+
+    <div id="screen-tutorial" class="screen hidden">
+        <h2>Como Jogar</h2>
+        <div class="tutorial-grid">
+            <div class="controls-box p1-box">
+                <h3>Jogador 1 (Azul)</h3>
+                <p><strong>Mover:</strong> Teclas W, A, S, D</p>
+            </div>
+            <div class="controls-box p2-box">
+                <h3>Jogador 2 (Vermelho)</h3>
+                <p><strong>Mover:</strong> Setas do Teclado</p>
+            </div>
+        </div>
+        <div class="objectives">
+            <h3>Objetivo Geral</h3>
+            <p>Colete as **Estrelas Amarelas** para marcar pontos e passar de fase!</p>
+            <p><em>Dica: Pressione <strong>F1</strong> a qualquer momento para ver a ajuda.</em></p>
+        </div>
+        <button id="btn-play">Começar Partida!</button>
+    </div>
+
+    <div id="screen-game" class="screen hidden">
+        <div class="game-header">
+            <div id="p1-score-display">Jogador 1: 0</div>
+            <div id="level-display">Fase: 1</div>
+            <div id="p2-score-display">Jogador 2: 0</div>
+        </div>
+        <div id="objective-alert">Objetivo da Fase: Colete 5 estrelas!</div>
+        <div id="game-container">
+            <div id="player1" class="player"></div>
+            <div id="player2" class="player"></div>
+            <div id="star" class="star"></div>
+        </div>
+    </div>
+
+    <div id="screen-ranking" class="screen hidden">
+        <h2>Fim de Jogo!</h2>
+        <h3 id="winner-text"></h3>
+        <h3>Ranking Geral</h3>
+        <table id="ranking-table">
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Jogador</th>
+                    <th>Pontuação</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-body">
+                </tbody>
+        </table>
+        <button id="btn-restart">Jogar Novamente</button>
+    </div>
+
+    <div id="help-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Menu de Ajuda (F1)</h3>
+            <p><strong>Jogador 1:</strong> W, A, S, D para mover.</p>
+            <p><strong>Jogador 2:</strong> Setas direcionais para mover.</p>
+            <p><strong>Objetivo:</strong> Pegue a estrela amarela antes do seu oponente.</p>
+            <p>O jogo possui 3 fases. A velocidade aumenta a cada nível!</p>
+            <button id="btn-close-help">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
